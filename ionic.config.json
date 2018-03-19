@@ -1,0 +1,8 @@
+{
+  "name": "search-filter",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
