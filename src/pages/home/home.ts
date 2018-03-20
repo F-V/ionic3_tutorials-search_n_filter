@@ -56,4 +56,13 @@ export class HomePage {
       item: item
     });
   }
+
+  itemColor(item){
+    if(item.country=="China"){
+      return "danger";
+    }
+    if(item.country=="Bosnia and Herzegovina"){
+      return "primary";
+    }
+  }
 }

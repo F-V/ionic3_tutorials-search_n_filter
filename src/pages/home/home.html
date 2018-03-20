@@ -17,7 +17,7 @@
 
 <ion-content>
   <ion-list>
-    <button ion-item (click)="openItem(item)" *ngFor="let item of currentItems">
+    <button ion-item (click)="openItem(item)" *ngFor="let item of currentItems" color="{{itemColor(item)}}">
       <ion-avatar item-start>
         <img [src]="item.avatar_base64" />
       </ion-avatar>
