@@ -5,14 +5,24 @@
     </button>
     <ion-title>Home</ion-title>
   </ion-navbar>
+  <ion-toolbar>
+    <ion-searchbar (ionInput)="getItems($event)" placeholder="Search" [(ngModel)]="search"></ion-searchbar>
+    <ion-buttons end>
+      <button ion-button (click)="filterAdvanced()">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
-
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+<ion-content>
+  <ion-list>
+    <button ion-item (click)="openItem(item)" *ngFor="let item of currentItems">
+      <ion-avatar item-start>
+        <img [src]="item.avatar_base64" />
+      </ion-avatar>
+      <h2>{{item.first_name}}</h2>
+      <p>{{item.last_name}}</p>
+    </button>
+  </ion-list>
 </ion-content>
